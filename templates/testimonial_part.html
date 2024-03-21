@@ -1,0 +1,31 @@
+{% load static %}
+
+<div class="container-fluid testimonial py-5 my-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+            <h5 class="text-primary">Our Testimonial</h5>
+            <h1>Our Client Saying!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
+            {% for testimonial in testimonials %}
+
+            <div class="testimonial-item border p-4">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <img src="{{ testimonial.image.url }}" alt="{{ testimonial.client_name }}">
+
+                    </div>
+                    <div class="ms-4">
+                        <h4 class="text-secondary">{{ testimonial.client_name }}</h4>
+                        <p class="m-0 pb-3">{{ testimonial.profession }}</p>
+                    </div>
+                </div>
+                <div class="border-top mt-4 pt-3">
+                    <p class="mb-0">{{ testimonial.comment }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
